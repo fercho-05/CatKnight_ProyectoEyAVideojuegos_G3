@@ -30,6 +30,10 @@ public class LevelManager : Monostate<LevelManager>
     escenas del videojuego.
      
     */
+    public void SceneName(string SceneName)
+    {
+        SceneManager.LoadScene(SceneName);
+    }
 
     public void FirstScene()
     {

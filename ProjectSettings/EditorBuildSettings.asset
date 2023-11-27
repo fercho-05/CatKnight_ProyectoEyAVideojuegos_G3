@@ -12,6 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Principal.unity
     guid: efbb1ae03c7644b44b925d14f66e1446
   - enabled: 1
+    path: Assets/Scenes/Mapa Inicial.unity
+    guid: bc6d85e9a5144734caf0903a02dba806
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: e62fd4f9de089b949bfbff4b4b1e7490
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 5a8a7adb217f4e2459a7f8f5cffffdcd
+  - enabled: 1
+    path: Assets/Scenes/Final Boss.unity
+    guid: edd515ea97690164c8f20e04c5cf0814
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 750e5bd6555a56a4c9fc4b4f0763359d
+  - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: ae12868cd0fa0a54bbb0867f5381fc68
   m_configObjects: {}

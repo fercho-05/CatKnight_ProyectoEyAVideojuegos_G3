@@ -11,6 +11,12 @@ public class MenuPrincipal : MonoBehaviour
      * lo enviara a la escena de Creditos.*/
 	public void Creditos()
     {
-		SceneManager.LoadScene("Creditos");
-	}
+        LevelManager.Instance.LastScene();
+    }
+
+
+    public void IniciarJuego()
+    {
+        LevelManager.Instance.NextScene();
+    }
 }

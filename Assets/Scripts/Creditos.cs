@@ -33,4 +33,10 @@ public class Creditos : MonoBehaviour
     {
         SceneManager.LoadScene("Menu Principal");
     }
+
+
+    public void Inicio()
+    {
+        LevelManager.Instance.FirstScene();
+    }
 }
