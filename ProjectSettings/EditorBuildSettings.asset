@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Boss.unity
     guid: edd515ea97690164c8f20e04c5cf0814
   - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 4363148c567a8ac448a49d8a38adf84b
+  - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 750e5bd6555a56a4c9fc4b4f0763359d
   - enabled: 1
