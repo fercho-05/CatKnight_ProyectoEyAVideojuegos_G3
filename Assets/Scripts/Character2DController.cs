@@ -58,6 +58,9 @@ public class Character2DController : Monostate <Character2DController>
 
     //------------------------------//
 
+    [Header("Attack")]
+    [SerializeField]
+    float meleeDamage;
 
     [Header("Animation")]
     [SerializeField]

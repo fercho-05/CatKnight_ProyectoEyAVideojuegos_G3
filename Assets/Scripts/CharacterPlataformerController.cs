@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterPlataformerController : MonoBehaviour
+public class CharacterPlataformerController : Monostate <CharacterPlataformerController>
 {
     [Header("Move")]
     [SerializeField]
@@ -32,6 +32,14 @@ public class CharacterPlataformerController : MonoBehaviour
     [SerializeField]
     float jumpGraceTime = 0.20F;
 
+    [Header("Attack")]
+
+    [SerializeField]
+    Transform attackPoint;
+
+    [SerializeField]
+    LayerMask enemyMask;
+
     //[SerializeField]
     //float reboundY = 5.0F;
 
@@ -46,12 +54,14 @@ public class CharacterPlataformerController : MonoBehaviour
     bool _isMoving;
     bool _isJumping;
     bool _isJumpPressed;
-
+    bool _isAttacking;
     float _gravityY;
     float _lastTimeJumpPressed;
+    float _meleeDamage;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _rb = GetComponent<Rigidbody2D>();
         _gravityY = -Physics2D.gravity.y;
     }
@@ -163,7 +173,29 @@ public class CharacterPlataformerController : MonoBehaviour
                 CapsuleDirection2D.Horizontal, 0.0F, groundMask);
     }
 
+    public void Attack(float damage)
+    {
 
+        if (_isAttacking)
+        {
+            return;
+        }
+
+        _isAttacking = true;
+        _meleeDamage = damage;
+        animator.SetBool("attack", true);
+    }
+
+    public void Attack()
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, 0.2F, enemyMask);
+        foreach (Collider2D collider in enemies)
+        {
+            //codigo para hacer daño
+        }
+        _isAttacking = false;
+        animator.SetBool("attack", false);
+    }
 
 
 }
