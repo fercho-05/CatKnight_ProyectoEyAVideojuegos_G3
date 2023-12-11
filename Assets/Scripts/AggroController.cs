@@ -105,6 +105,15 @@ public class AggroController : Monostate<AggroController>
     {
         foreach (Transform shootPoint in shootPoints)
         {
+            if (isFacingRigth)
+            {
+                shootPoint.rotation = Quaternion.Euler(new Vector3(0.0F, 0.0F, -90.0F));
+            }
+            else
+            {
+                shootPoint.rotation = Quaternion.Euler(new Vector3(0.0F, 0.0F, 90.0F));
+            }
+            
             Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         }
     }

@@ -26,4 +26,14 @@ public class BulletController : MonoBehaviour
     {
         rb.velocity = transform.up * speed;
     }
+
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+
+        }
+    }
 }

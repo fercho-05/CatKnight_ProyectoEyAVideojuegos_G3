@@ -200,4 +200,16 @@ public class CharacterPlataformerController : Monostate <CharacterPlataformerCon
     }
 
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            //Recibir DAÑO actualizar barra de vida
+
+        }
+
+
+    }
+
+
 }
