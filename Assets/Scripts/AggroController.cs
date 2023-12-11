@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AggroController : MonoBehaviour
+public class AggroController : Monostate<AggroController>
 {
     [SerializeField]
     Transform player;
@@ -30,6 +31,18 @@ public class AggroController : MonoBehaviour
 
     Animator _animator;
 
+    [Header("Combat")]
+    [SerializeField]
+    GameObject bulletPrefab;
+
+    [SerializeField]
+    Transform[] shootPoints;
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     void Start()
     {
         _position = transform.position;
@@ -52,7 +65,7 @@ public class AggroController : MonoBehaviour
             _animator.SetFloat("speed", 0.0F);
             //Llamar a disparo
             _animator.SetTrigger("shoot");
-
+            Disparar();
         }
         else if (_distance >= stopDistance && _isChasing)
         {
@@ -88,4 +101,11 @@ public class AggroController : MonoBehaviour
         }
     }
 
+    void Disparar()
+    {
+        foreach (Transform shootPoint in shootPoints)
+        {
+            Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+        }
+    }
 }
