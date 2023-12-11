@@ -18,7 +18,28 @@ public class CollectableGemController : MonoBehaviour
 		{
 			InventoryController.Instance.AddGem(collectableType, value2);
 			Destroy(gameObject);
-		}
+
+			//Control de niveles
+            if (StateManager.Instance.getLevel1() == false)
+            {
+				StateManager.Instance.setLevel1(true);
+                LevelManager.Instance.SceneName("Mapa Inicial");
+                //Se podria agregar un mensaje que indique que el nivel ha sido completado y que ha desbloqueado el 2
+            }
+            else if(StateManager.Instance.getLevel1() == true && StateManager.Instance.getLevel2() == false)
+            {
+                StateManager.Instance.setLevel2(true);
+                LevelManager.Instance.SceneName("Mapa Inicial");
+                //Se podria agregar un mensaje que indique que el nivel ha sido completado y que ha desbloqueado el FinalBoss
+            }
+            else
+            {
+                StateManager.Instance.setFinalBoss(true);
+                //Se envia a la pantalla de WIN
+                //Se puede hacer que el jefe suele una ultima gema y con esta se gane el juego
+                LevelManager.Instance.SceneName("Win");
+            }
+        }
     }
 
 }

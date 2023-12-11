@@ -184,6 +184,8 @@ public class CharacterPlataformerController : Monostate <CharacterPlataformerCon
         _isAttacking = true;
         _meleeDamage = damage;
         animator.SetBool("attack", true);
+
+        AudioManager.Instance.PlaySFX("golpeEspada", false);
     }
 
     public void Attack()

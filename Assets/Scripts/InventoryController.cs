@@ -37,13 +37,14 @@ public class InventoryController : Monostate<InventoryController>
 		{
 			_inventory.Add(collectableType, value2);
 		}
-		Win();
+		//SE ENVIARÁ AL WIN DESDE OTRA VENTANA, AL DERROTAR AL JEFE
+		//Win();
 	}
 
 
 	/*Método en el cual se llama la escena: Win.*/
-	public void Win()
-	{
-		SceneManager.LoadScene("Win");
-	}
+	//public void Win()
+	//{
+	//	SceneManager.LoadScene("Win");
+	//}
 }

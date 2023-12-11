@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
 	/* Variable entera que contiene las 7 -
 	 * imágenes de la barra de mejora:  */
-	public int value = 7;
+	public int value = -1;
 
 
 	/*Método Awake que contiene una condición en el cual nos ayudara -
@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
 		 */
 		Debug.Log(value);
+
 		hud.DesactivarMejora(value);
 	}
 
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
 		/* Para verificar el contador en la consola-
 		 * además de servir como una guía para el jugador:  */
 		Debug.Log(value);
+
 		hud.ActivarMejora(value);
 
 	}

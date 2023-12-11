@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2468150652192869327
+--- !u!1 &1799480734074221711
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4774287443446780244}
-  - component: {fileID: 6136349988454026260}
+  - component: {fileID: 8716724650819530260}
+  - component: {fileID: 8039235448909574996}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4774287443446780244
+--- !u!4 &8716724650819530260
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2468150652192869327}
+  m_GameObject: {fileID: 1799480734074221711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 47.519287, y: -1.9930096, z: -1.3211175}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6136349988454026260
+--- !u!114 &8039235448909574996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2468150652192869327}
+  m_GameObject: {fileID: 1799480734074221711}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91637d8c00502504cb73ab9b6b6dc2ea, type: 3}
@@ -49,8 +49,8 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: cca52b2e69057a14cbf3189393694a39, type: 3}
   - name: Accion
     sound: {fileID: 8300000, guid: 2e1bbe291445971449faf665fe67330a, type: 3}
-  - name: Golpe
-    sound: {fileID: 8300000, guid: d60089d610feccb419d560d157fd4773, type: 3}
+  - name: golpeEspada
+    sound: {fileID: 8300000, guid: 3943e15dc91810146939d182a69ece69, type: 3}
   - name: Transicion
     sound: {fileID: 8300000, guid: edfddbbb2260cac4f9f1f7cf7898b9ac, type: 3}
   - name: Jefe
