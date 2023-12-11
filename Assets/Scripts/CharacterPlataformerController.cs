@@ -59,6 +59,7 @@ public class CharacterPlataformerController : Monostate <CharacterPlataformerCon
     float _lastTimeJumpPressed;
     float _meleeDamage;
 
+
     protected override void Awake()
     {
         base.Awake();
@@ -200,16 +201,7 @@ public class CharacterPlataformerController : Monostate <CharacterPlataformerCon
     }
 
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Bullet")
-        {
-            //Recibir DAÑO actualizar barra de vida
-
-        }
-
-
-    }
+   
 
 
 }

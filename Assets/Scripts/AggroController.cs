@@ -38,6 +38,9 @@ public class AggroController : Monostate<AggroController>
     [SerializeField]
     Transform[] shootPoints;
 
+    [SerializeField]
+    float bossLife = 150.0F;
+
     protected override void Awake()
     {
         base.Awake();
@@ -51,7 +54,10 @@ public class AggroController : Monostate<AggroController>
 
     void Update()
     {
-        _distance = Vector2.Distance(transform.position, player.position);
+        if (player != null)
+        {
+            _distance = Vector2.Distance(transform.position, player.position);
+        }  
 
         if (_distance <= awakeDistance && !_isChasing)
         {
@@ -117,4 +123,29 @@ public class AggroController : Monostate<AggroController>
             Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")//si el colisionador con el que choque es igual a "player", significa que choco con el player
+        {
+            Vector2 contactPoint = collision.GetContact(0).normal;
+
+            if (contactPoint.y < -0.9F)
+            {
+                if (bossLife <= 0)
+                {
+                    Destroy(gameObject); //mata al enemigo
+
+                }
+                else if(bossLife > 0)
+                {
+                    AudioManager.Instance.PlaySFX("golpe", false);
+                    bossLife -= 15;
+                }
+                
+            }
+
+        }
+    }
+
 }

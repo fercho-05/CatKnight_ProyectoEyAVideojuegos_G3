@@ -60,12 +60,11 @@ public class HealthController : MonoBehaviour
             return;
         }
 
-        _characterController.animator.SetTrigger("hit");
         _healthBarController.OnDamage.Invoke(damage);
 
 
         Rebound(contactPoint);
-        StartCoroutine(LoseControl());
+        //StartCoroutine(LoseControl());
     }
 
     public void Heal(float value)

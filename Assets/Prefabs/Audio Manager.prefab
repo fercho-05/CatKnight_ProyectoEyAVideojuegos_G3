@@ -55,3 +55,5 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: edfddbbb2260cac4f9f1f7cf7898b9ac, type: 3}
   - name: Jefe
     sound: {fileID: 8300000, guid: fae047bc41653ee40a22a8108091c325, type: 3}
+  - name: golpe
+    sound: {fileID: 8300000, guid: bc5ecaa4c240a734fbb265a3382da270, type: 3}

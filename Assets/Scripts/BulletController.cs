@@ -12,6 +12,9 @@ public class BulletController : MonoBehaviour
 
     Rigidbody2D rb;
 
+    [SerializeField]
+    float damageJefe = 20.0F;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +37,19 @@ public class BulletController : MonoBehaviour
         {
             Destroy(gameObject);
 
+
+            Vector2 contactPoint = other.GetContact(0).normal;
+
+
+            //Recibir DAÑO actualizar barra de vida
+            HealthController controller = other.collider.GetComponent<HealthController>(); //entonces busque el health bar
+            if (controller != null)
+            {
+                controller.TakeDamage(damageJefe, contactPoint);
+            }
+
         }
     }
+
+
 }
