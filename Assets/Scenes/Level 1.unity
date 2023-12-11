@@ -42385,7 +42385,6 @@ GameObject:
   - component: {fileID: 1492481763631625689}
   - component: {fileID: 1492481763631625690}
   - component: {fileID: 1492481763631625691}
-  - component: {fileID: 1492481763631625692}
   - component: {fileID: 1492481763631625693}
   m_Layer: 7
   m_Name: Cat_platformer
@@ -42482,21 +42481,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &1492481763631625692
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492481763631625668}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &1492481763631625693
 MonoBehaviour:
   m_ObjectHideFlags: 0
