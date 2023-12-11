@@ -12865,6 +12865,8 @@ GameObject:
   - component: {fileID: 1244068399}
   - component: {fileID: 1244068398}
   - component: {fileID: 1244068401}
+  - component: {fileID: 1244068402}
+  - component: {fileID: 1244068403}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -12992,6 +12994,40 @@ MonoBehaviour:
   groundCheck: {fileID: 1918258491}
   speed: 140
   isFacingRight: 1
+--- !u!114 &1244068402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244068396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 487e5e2ac820168449c22d0c90d699ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+--- !u!95 &1244068403
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244068396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5caec803c474f5c478a8424354f242fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1363660263
 GameObject:
   m_ObjectHideFlags: 0
@@ -44082,3 +44118,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03c585fe810cf8b41a60534b0f7ef801, type: 3}
+--- !u!1 &9121379075789356723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7648231129039790659, guid: 03c585fe810cf8b41a60534b0f7ef801, type: 3}
+  m_PrefabInstance: {fileID: 9121379075789356722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9121379075789356724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121379075789356723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6adb7b8155f61419801dfbd61dc95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 6910093373315381443}
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9121379075789356725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121379075789356723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f6ea7ba79db5845b23e45d4dbd7cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  loseControlTimeout: 1.25
+  reboundVelocity: {x: 0, y: 0}

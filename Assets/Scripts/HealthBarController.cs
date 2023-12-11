@@ -33,6 +33,7 @@ public class HealthBarController : MonoBehaviour
     {
         healthBar.value -= Mathf.Abs(value);
     }
+
     public void IncreaseHealht(float value)
     {
         healthBar.value += Mathf.Abs(value);
