@@ -4309,8 +4309,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1386940895}
   speed: 1
-  awakeDistance: 15
+  awakeDistance: 10
   stopDistance: 20
+  shootDistance: 15
   isFacingRigth: 0
 --- !u!1 &322905848
 GameObject:

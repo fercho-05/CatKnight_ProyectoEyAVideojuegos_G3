@@ -17,6 +17,9 @@ public class AggroController : MonoBehaviour
     float stopDistance;
 
     [SerializeField]
+    float shootDistance;
+
+    [SerializeField]
     bool isFacingRigth;
 
     float _distance;
@@ -42,13 +45,20 @@ public class AggroController : MonoBehaviour
             _isChasing = true;
             _animator.SetFloat("speed", 1.0F);
         }
+        else if (_distance <= stopDistance && _isChasing && _distance >= shootDistance)
+        {
+            //Me detengo y disparo
+            _isChasing = false;
+            _animator.SetFloat("speed", 0.0F);
+            //Llamar a disparo
+            _animator.SetTrigger("shoot");
+
+        }
         else if (_distance >= stopDistance && _isChasing)
         {
-            _isChasing= false;
+            //Me detengo
+            _isChasing = false;
             _animator.SetFloat("speed", 0.0F);
-
-            //Llamar a disparo
-            //_animator.SetTrigger("shoot");
         }
 
         Vector2 lookAt = Vector2.zero;
