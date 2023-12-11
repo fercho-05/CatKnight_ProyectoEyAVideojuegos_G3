@@ -4,5 +4,6 @@ public enum CollectableTypes
 {
     NONE,
     COIN,
-    GEM
+    GEM,
+    LIFE
 }

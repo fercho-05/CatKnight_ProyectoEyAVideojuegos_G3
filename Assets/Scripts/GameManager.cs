@@ -13,10 +13,16 @@ public class GameManager : MonoBehaviour
 	/*Variable para poder instanciar el script de HUD: */
 	public HUD hud;
 
+	/* Nota:
+				Cuando el personaje choca con el cubo, el value tiene que llegar a -1, esto es para que haga la transición de -
+				las imágenes en orden, porque si no entonces se salta la imagen: Mejora#1 -
+				y coloca la imagen siguiente: Mejora#2.
+
+    */
 
 	/* Variable entera que contiene las 7 -
 	 * imágenes de la barra de mejora:  */
-	public int value = -1;
+	public int value = 7;
 
 
 	/*Método Awake que contiene una condición en el cual nos ayudara -
