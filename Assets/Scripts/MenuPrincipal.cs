@@ -19,4 +19,9 @@ public class MenuPrincipal : MonoBehaviour
     {
         LevelManager.Instance.NextScene();
     }
+
+    private void Start()
+    {
+        AudioManager.Instance.PlayMusic("Ambiente");
+    }
 }

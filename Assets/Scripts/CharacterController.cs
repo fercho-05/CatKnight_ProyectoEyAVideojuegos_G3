@@ -44,7 +44,9 @@ public class CharacterController : MonoBehaviour
             //Este estado se cambia una vez que se obtiene la gema del nivel
             if (StateManager.Instance.getLevel1() == false)
             {
-                LevelManager.Instance.SceneName("Level 1");  
+                LevelManager.Instance.SceneName("Level 1");
+                AudioManager.Instance.StopSound();
+                AudioManager.Instance.PlayMusic("Accion");
             }
             else
             {
@@ -64,7 +66,10 @@ public class CharacterController : MonoBehaviour
             else if (StateManager.Instance.getLevel2() == false && StateManager.Instance.getLevel1() == true)
             {
                 LevelManager.Instance.SceneName("Level 2");
-            }else if (StateManager.Instance.getLevel2() == true)
+                AudioManager.Instance.StopSound();
+                AudioManager.Instance.PlayMusic("Accion");
+            }
+            else if (StateManager.Instance.getLevel2() == true)
             {
                 mensajeText.text = "El nivel ya ha sido completado";
                 //Borrar mensaje
@@ -82,6 +87,8 @@ public class CharacterController : MonoBehaviour
             else if (StateManager.Instance.getFinalBoss() == false && StateManager.Instance.getLevel1() == true && StateManager.Instance.getLevel2() == true)
             {
                 LevelManager.Instance.SceneName("Final Boss");
+                AudioManager.Instance.StopSound();
+                AudioManager.Instance.PlayMusic("Jefe");
             }
             else if (StateManager.Instance.getFinalBoss() == true)
             {

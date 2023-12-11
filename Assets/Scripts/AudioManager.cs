@@ -39,15 +39,6 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
-    /*public void PlaySFX(string name) 
-    {
-        Sound sfx = FindSound(name);
-        if (sfx != null)
-        {
-            _sfxSource.PlayOneShot(sfx.sound);
-        }
-    }*/
-
     public void PlaySFX(string name, bool loop = true)
     {
         Sound sfx = FindSound(name);
@@ -67,6 +58,10 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
+    public void StopSound()
+    {
+        _musicSource.Stop();
+    }
     public void StopSFX()
     {
         _sfxSource.Stop();
