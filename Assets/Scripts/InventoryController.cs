@@ -6,15 +6,19 @@ using UnityEngine.XR;
 
 public class InventoryController : Monostate<InventoryController>
 {
-	Dictionary<CollectableTypes, float> _inventory;
+    Dictionary<CollectableTypes, float> _inventory;
+    Dictionary<CollectableTypesLife, float> _inventory2;
+    HealthController _healthController;
 
-	protected override void Awake()
-	{
-		base.Awake();
-		_inventory = new Dictionary<CollectableTypes, float>();
-	}
+    protected override void Awake()
+    {
+        base.Awake();
+        _healthController = GetComponent<HealthController>();
+        _inventory = new Dictionary<CollectableTypes, float>();
+        _inventory2 = new Dictionary<CollectableTypesLife, float>();
+    }
 
-	public void Add(CollectableTypes collectableType, float value2)
+    public void Add(CollectableTypes collectableType, float value2)
 	{
 		if (_inventory.ContainsKey(collectableType))
 		{
@@ -26,8 +30,27 @@ public class InventoryController : Monostate<InventoryController>
 		}
 	}
 
-	/*Si recoge la gema, entonces quiere decir que gano el nivel:  */
-	public void AddGem(CollectableTypes collectableType, float value2)
+    public void AddOne(CollectableTypesLife collectableTypes, float value, bool isHealth)
+    {
+        if (isHealth)
+        {
+            _healthController.Heal(value);
+        }
+        else
+        {
+            if (_inventory2.ContainsKey(collectableTypes))
+            {
+                _inventory2[collectableTypes] = value;
+            }
+            else
+            {
+                _inventory2.Add(collectableTypes, value);
+            }
+        }
+    }
+
+    /*Si recoge la gema, entonces quiere decir que gano el nivel:  */
+    public void AddGem(CollectableTypes collectableType, float value2)
 	{
 		if (_inventory.ContainsKey(collectableType))
 		{

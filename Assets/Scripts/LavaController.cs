@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LavaController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LavaController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
+            SceneManager.LoadScene("Game Over");
         }
     }
 }
